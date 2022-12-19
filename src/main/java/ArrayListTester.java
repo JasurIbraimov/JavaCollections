@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.function.Predicate;
 
 public class ArrayListTester {
     public static void main(String[] args) {
@@ -31,6 +33,30 @@ public class ArrayListTester {
         ArrayList<Integer> arrayList3 = new ArrayList<>(arrayList2);
         System.out.println(arrayList3);
 
+
+        // Overloaded .add method (adds with defined position - index - of element )
+        arrayList2.add(99, 555);
+        System.out.println(arrayList2);
+
+        // Method addAll - adds all elements from another collection
+        ArrayList<Integer> arrayList4 = new ArrayList<>();
+        arrayList4.addAll(arrayList2);
+
+        // addAll from Collections class
+        // Array of integers
+        Integer[] integers = {1, 2000, 3};
+        Collections.addAll(arrayList4, integers);
+        System.out.println(arrayList4);
+
+        // Remove element from arrayList
+        arrayList4.remove(2);
+        System.out.println(arrayList4);
+        // Remove all elements of another collection
+        // arrayList4.removeAll(arrayList2);
+        System.out.println(arrayList4);
+        // Remove with predicate
+        arrayList4.removeIf(integer -> integer >= 20 && integer <= 40);
+        System.out.println(arrayList4);
 
     }
 }
